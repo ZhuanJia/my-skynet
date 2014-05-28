@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{030C2B0C-B557-4649-BBFB-06065BCA2F78}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>skynetmaster</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="lualib-src\lua-bson.c" />
+    <ClCompile Include="lualib-src\lua-clientsocket.c" />
+    <ClCompile Include="lualib-src\lua-memory.c" />
+    <ClCompile Include="lualib-src\lua-mongo.c" />
+    <ClCompile Include="lualib-src\lua-multicast.c" />
+    <ClCompile Include="lualib-src\lua-netpack.c" />
+    <ClCompile Include="lualib-src\lua-profile.c" />
+    <ClCompile Include="lualib-src\lua-seri.c" />
+    <ClCompile Include="lualib-src\lua-skynet.c" />
+    <ClCompile Include="lualib-src\lua-socket.c" />
+    <ClCompile Include="service-src\service_gate.c" />
+    <ClCompile Include="service-src\service_harbor.c" />
+    <ClCompile Include="service-src\service_logger.c" />
+    <ClCompile Include="service-src\service_master.c" />
+    <ClCompile Include="service-src\service_snlua.c" />
+    <ClCompile Include="skynet-src\malloc_hook.c" />
+    <ClCompile Include="skynet-src\skynet_env.c" />
+    <ClCompile Include="skynet-src\skynet_error.c" />
+    <ClCompile Include="skynet-src\skynet_handle.c" />
+    <ClCompile Include="skynet-src\skynet_harbor.c" />
+    <ClCompile Include="skynet-src\skynet_main.c" />
+    <ClCompile Include="skynet-src\skynet_module.c" />
+    <ClCompile Include="skynet-src\skynet_monitor.c" />
+    <ClCompile Include="skynet-src\skynet_mq.c" />
+    <ClCompile Include="skynet-src\skynet_server.c" />
+    <ClCompile Include="skynet-src\skynet_socket.c" />
+    <ClCompile Include="skynet-src\skynet_start.c" />
+    <ClCompile Include="skynet-src\skynet_timer.c" />
+    <ClCompile Include="skynet-src\socket_server.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lualib-src\lua-seri.h" />
+    <ClInclude Include="service-src\databuffer.h" />
+    <ClInclude Include="service-src\hashid.h" />
+    <ClInclude Include="skynet-src\malloc_hook.h" />
+    <ClInclude Include="skynet-src\rwlock.h" />
+    <ClInclude Include="skynet-src\skynet.h" />
+    <ClInclude Include="skynet-src\skynet_env.h" />
+    <ClInclude Include="skynet-src\skynet_handle.h" />
+    <ClInclude Include="skynet-src\skynet_harbor.h" />
+    <ClInclude Include="skynet-src\skynet_imp.h" />
+    <ClInclude Include="skynet-src\skynet_malloc.h" />
+    <ClInclude Include="skynet-src\skynet_module.h" />
+    <ClInclude Include="skynet-src\skynet_monitor.h" />
+    <ClInclude Include="skynet-src\skynet_mq.h" />
+    <ClInclude Include="skynet-src\skynet_server.h" />
+    <ClInclude Include="skynet-src\skynet_socket.h" />
+    <ClInclude Include="skynet-src\skynet_timer.h" />
+    <ClInclude Include="skynet-src\socket_epoll.h" />
+    <ClInclude Include="skynet-src\socket_kqueue.h" />
+    <ClInclude Include="skynet-src\socket_poll.h" />
+    <ClInclude Include="skynet-src\socket_server.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="examples\agent.lua" />
+    <None Include="examples\client.lua" />
+    <None Include="examples\config" />
+    <None Include="examples\config.mc" />
+    <None Include="examples\config_log" />
+    <None Include="examples\globallog.lua" />
+    <None Include="examples\main.lua" />
+    <None Include="examples\main_log.lua" />
+    <None Include="examples\preload.lua" />
+    <None Include="examples\simpledb.lua" />
+    <None Include="examples\simplemonitor.lua" />
+    <None Include="examples\watchdog.lua" />
+    <None Include="lualib\datacenter.lua" />
+    <None Include="lualib\jsonpack.lua" />
+    <None Include="lualib\loader.lua" />
+    <None Include="lualib\md5.lua" />
+    <None Include="lualib\mongo.lua" />
+    <None Include="lualib\mqueue.lua" />
+    <None Include="lualib\multicast.lua" />
+    <None Include="lualib\redis.lua" />
+    <None Include="lualib\skynet.lua" />
+    <None Include="lualib\snax.lua" />
+    <None Include="lualib\socket.lua" />
+    <None Include="lualib\socketchannel.lua" />
+    <None Include="service\abort.lua" />
+    <None Include="service\bootstrap.lua" />
+    <None Include="service\cmemory.lua" />
+    <None Include="service\console.lua" />
+    <None Include="service\datacenterd.lua" />
+    <None Include="service\dbg.lua" />
+    <None Include="service\debug_console.lua" />
+    <None Include="service\gate.lua" />
+    <None Include="service\launcher.lua" />
+    <None Include="service\multicastd.lua" />
+    <None Include="service\service_mgr.lua" />
+    <None Include="service\snaxd.lua" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
